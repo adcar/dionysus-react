@@ -51,7 +51,7 @@ class Video extends Component {
     }
     else if (link.includes('vidtodo.com')) {
       console.log(link)
-      return 'todooo: ' + link.slice(0, 19) + 'embed-' + link.slice(19) +  '.html'
+      return link.slice(0, 19) + 'embed-' + link.slice(19) +  '.html'
     }
     else if (link.includes('vidlox.tv')) {
       console.log('vidlox')
@@ -70,7 +70,7 @@ class Video extends Component {
 
     const filterLink = link => (
       // Matches anything before an equal sign and replaces it with an empty string
-      link.replace(/.+\=/, '')
+      link.replace(/.+=/, '')
     )
     // mr-robot-season-3-episode-2
     fetch(corsProxy + 'http://projectfreetv.bz/mr-robot-season-1-episode-6/')
@@ -93,7 +93,7 @@ class Video extends Component {
         links = links.map(link => this.convertLink(link)).sort().filter(n => n !== undefined)
         this.setState({
           sources: links,
-          sourceList: links.map(link => <li><button onClick={() => this.changeSource(link)}>{link}</button></li>)
+          sourceList: links.map((link, index) => <li key={index}><button onClick={() => this.changeSource(link)}>{link}</button></li>)
         })
         console.log(links)
       })
