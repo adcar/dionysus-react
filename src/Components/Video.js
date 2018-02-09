@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Video extends Component {
 
-  constructor () {
-    super ();
+  constructor (props) {
+    super (props);
     this.state = {
       sources: [],
       sourceList: [],
@@ -73,7 +73,7 @@ class Video extends Component {
       link.replace(/.+=/, '')
     )
     // mr-robot-season-3-episode-2
-    fetch(corsProxy + 'http://projectfreetv.bz/mr-robot-season-1-episode-6/')
+    fetch(corsProxy + 'http://projectfreetv.bz/' + this.props.match.params.show +'-season-' + this.props.match.params.season + '-episode-' + this.props.match.params.episode)
       .then(res => res.text())
       .catch(err => console.log('Darn it, ' + err))
       .then(data => {
@@ -95,7 +95,6 @@ class Video extends Component {
           sources: links,
           sourceList: links.map((link, index) => <li key={index}><button onClick={() => this.changeSource(link)}>{link}</button></li>)
         })
-        console.log(links)
       })
       .catch(err => console.log('Darn it, ' + err))
       }

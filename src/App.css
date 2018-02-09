@@ -31,3 +31,7 @@ iframe {
   height: 360px;
   width: 540px;
 }
+
+ul {
+  list-style-type: none;
+}
