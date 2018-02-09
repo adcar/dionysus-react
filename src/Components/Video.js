@@ -49,7 +49,7 @@ class Video extends Component {
     else if (link.includes('thevideo.me')) { // Done!
       return link.slice(0, 19) + 'embed-' + link.slice(19) + '.html'
     }
-    else if (link.includes('vidtodo.com')) {
+    else if (link.includes('vidtodo.com')) { // Done!
       console.log(link)
       return link.slice(0, 19) + 'embed-' + link.slice(19) +  '.html'
     }
