@@ -38,14 +38,6 @@ class Video extends Component {
     else if (link.includes('http://vidup.me')) { // Done!
       return link.slice(0, 16) + 'embed-' + link.slice(16, 28) + '-640x360.html'
     }
-    else if (link.includes('vshare.eu')) {
-      console.log('vshare')
-      return link
-    }
-    else if (link.includes('streamin.to')) {
-      console.log('steamin')
-      return link
-    }
     else if (link.includes('thevideo.me')) { // Done!
       return link.slice(0, 19) + 'embed-' + link.slice(19) + '.html'
     }
@@ -102,8 +94,8 @@ class Video extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Ayy watch this!</h2>
-        <ul>
+        <h2 className="sub-heading">{this.props.match.params.show} S:{this.props.match.params.season} E:{this.props.match.params.episode}</h2>
+        <ul className="link-selector">
         {this.state.sourceList}
         </ul>
         <iframe title="video" allowFullScreen src={this.state.currentSource} />

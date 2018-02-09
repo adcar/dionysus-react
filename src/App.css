@@ -1,37 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:600,500,400,200,100");
+* {
+  font-family: Roboto, sans-serif; }
+
 .App {
-  text-align: center;
-}
+  text-align: center; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+  height: 80px; }
 
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
-}
+  color: white; }
 
 .App-title {
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
 .App-intro {
-  font-size: large;
-}
+  font-size: large; }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 iframe {
   height: 360px;
-  width: 540px;
-}
+  width: 540px; }
 
-ul {
-  list-style-type: none;
-}
+ul.link-selector {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none; }
+  ul.link-selector li {
+    margin: 0.5em auto; }
+    ul.link-selector li button {
+      background-color: transparent; }
+
+.sub-heading {
+  font-weight: 200; }
+
+h1 {
+  font-weight: 600; }
