@@ -39,11 +39,19 @@ class Video extends Component {
       return link.slice(0, 16) + 'embed-' + link.slice(16, 28) + '-640x360.html'
     }
     else if (link.includes('thevideo.me')) { // Done!
-      return link.slice(0, 19) + 'embed-' + link.slice(19) + '.html'
+      if (link.includes('https')) {
+        return link.slice(0, 20) + 'embed-' + link.slice(20) +  '.html'
+      } else {
+        return link.slice(0, 19) + 'embed-' + link.slice(19) +  '.html'
+      }
     }
     else if (link.includes('vidtodo.com')) { // Done!
-      console.log(link)
-      return link.slice(0, 19) + 'embed-' + link.slice(19) +  '.html'
+      if (link.includes('https')) {
+        return link.slice(0, 20) + 'embed-' + link.slice(20) +  '.html'
+      } else {
+        return link.slice(0, 19) + 'embed-' + link.slice(19) +  '.html'
+      }
+
     }
     else if (link.includes('vidlox.tv')) {
       console.log('vidlox')

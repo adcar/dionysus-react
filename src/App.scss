@@ -43,6 +43,12 @@ ul.link-selector {
   li {
     button {
       background-color: transparent;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-skip: ink;
+      }
     }
     margin: 0.5em auto;
   }
